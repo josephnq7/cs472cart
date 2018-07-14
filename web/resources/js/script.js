@@ -1,6 +1,11 @@
-/**
- * Created by josep on 7/12/2018.
- */
-$(function(){
 
+$(function(){
+    $('.addToCart').click(function(){
+        console.log($(this).attr('href'));
+        $.post($(this).attr('href')).done(function(data){
+            console.log(data);
+            $("#num-of-items").text(data);
+        });
+        return false;
+    })
 })

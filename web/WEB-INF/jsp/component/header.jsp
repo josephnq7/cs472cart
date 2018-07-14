@@ -70,11 +70,11 @@
                 <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
                     Category2
                 </a>
-                <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="shopping-cart" class="list-group-item d-flex justify-content-between align-items-center">
                     View Cart
                     <span>
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="badge badge-primary badge-pill">0</span>
+                        <span id="num-of-items" class="badge badge-primary badge-pill">${numItems}</span>
                     </span>
                 </a>
             </div>

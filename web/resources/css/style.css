@@ -57,3 +57,29 @@ div#login-area {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.product-image {
+    width: 100px;
+}
+
+div.row.shopping-cart {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input.qty{
+    width: 70px;
+}
+
+.col-sm-5 {
+    text-align: right;
+    padding: 0;
+}
+.col-sm-5.left{
+    text-align: left;
+}
+.center_text {
+    text-align: center;
+}

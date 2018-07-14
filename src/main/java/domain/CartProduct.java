@@ -1,5 +1,7 @@
 package domain;
 
+import java.text.DecimalFormat;
+
 public class CartProduct {
 	private Product product;
 	private double price;
@@ -30,6 +32,10 @@ public class CartProduct {
 	public void setQty(int qty) {
 		this.qty = qty;
 	}
-	
+
+	public double getTotal(){
+		DecimalFormat df = new DecimalFormat("###.###");
+		return Double.parseDouble(df.format(qty * price));
+	}
 	
 }
