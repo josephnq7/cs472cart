@@ -21,7 +21,7 @@
                     <td>${item.product.name}</td>
                     <td><input class="qty" type="number" placeholder="1" class="input-mini" value="${item.qty}" productid="${item.product.id}"></td>
                     <td class="price format-money">${item.price}</td>
-                    <td class="total format-money">${item.total}</td>
+                    <td class="total format-money">${item.price * item.qty}</td>
                 </tr>
             </c:forEach>
             <tr>

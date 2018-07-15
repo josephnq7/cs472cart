@@ -3,28 +3,20 @@ package domain;
 import java.util.Objects;
 
 public class OrderItem {
-	private int id;
+	private String id;
 	private int productQty;
 	private Product product;
-	private Order order;
 
-	public OrderItem(int id, int productQty, Product product, Order order) {
+	public OrderItem(String id, int productQty, Product product) {
 		this.id = id;
 		this.productQty = productQty;
 		this.product = product;
-		this.order = order;
 	}
 
-	public Order getOrder() {
-		return order;
-	}
-	public void setOrder(Order order) {
-		this.order = order;
-	}
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public int getProductQty() {

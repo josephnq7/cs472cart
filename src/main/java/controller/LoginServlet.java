@@ -52,7 +52,14 @@ public class LoginServlet extends HttpServlet {
         resp.addCookie(cookie);
       }
       req.getSession().setAttribute("email" , email);
-      resp.sendRedirect("index.jsp");
+
+      if(req.getSession().getAttribute("oldServlet") != null){
+        String oldServlet = (String) req.getSession().getAttribute("oldServlet");
+        req.getSession().setAttribute("oldServlet", null);
+        resp.sendRedirect(oldServlet);
+      }else{
+        resp.sendRedirect("/cart");
+      }
     }else{
       req.setAttribute("error_login", "Incorrect email or password");
       req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req,resp);

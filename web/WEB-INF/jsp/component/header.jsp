@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Knight Shop</title>
+    <title>Books Store</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="<c:url value="resources/css/bootstrap.min.css" />">

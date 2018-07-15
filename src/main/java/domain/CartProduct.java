@@ -33,9 +33,4 @@ public class CartProduct {
 		this.qty = qty;
 	}
 
-	public double getTotal(){
-		DecimalFormat df = new DecimalFormat("###.###");
-		return Double.parseDouble(df.format(qty * price));
-	}
-	
 }

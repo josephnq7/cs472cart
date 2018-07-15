@@ -9,42 +9,59 @@ public class Order {
 	private int userId;
 	private String fullName;
 	private String shippingAddress;
-	private String creditCard;
+	private String paymentMethod;
+	private String comment;
 	private String orderDate;
 	private double total;
 	private List<OrderItem> orderItems = new ArrayList<>();
 
-	public String getCreditCard() {
-		return creditCard;
-	}
-	public void setCreditCard(String creditCard) {
-		this.creditCard = creditCard;
-	}
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public int getUserId() {
 		return userId;
 	}
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
 	public String getFullName() {
 		return fullName;
 	}
+
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
+
 	public String getShippingAddress() {
 		return shippingAddress;
 	}
+
 	public void setShippingAddress(String shippingAddress) {
 		this.shippingAddress = shippingAddress;
 	}
 
+	public String getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(String paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 
 	public String getOrderDate() {
 		return orderDate;
@@ -54,24 +71,20 @@ public class Order {
 		this.orderDate = orderDate;
 	}
 
-	public List<OrderItem> getOrderItems() {
-		return orderItems;
-	}
-
-	public void setOrderItems(List<OrderItem> orderItems) {
-		this.orderItems = orderItems;
-	}
-
-	public void addOrderItem(OrderItem orderItem) {
-		this.orderItems.add(orderItem);
-	}
-
 	public double getTotal() {
 		return total;
 	}
 
 	public void setTotal(double total) {
 		this.total = total;
+	}
+
+	public List<OrderItem> getOrderItems() {
+		return orderItems;
+	}
+
+	public void setOrderItems(List<OrderItem> orderItems) {
+		this.orderItems = orderItems;
 	}
 
 	@Override

@@ -16,4 +16,8 @@ public class UserDao {
     }
     return false;
   }
+
+  public User getUserByEmail(String email){
+    return usersDB.get(email);
+  }
 }
