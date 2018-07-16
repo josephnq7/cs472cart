@@ -1,5 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="component/header.jsp"></jsp:include>
+<c:if test="${error_login != null}">
+    <div class="alert alert-danger" role="alert">
+        <c:out value="${error_login}"/>
+    </div>
+</c:if>
 <div class="row">
     <div class="col-md-12">
         <div class="row">

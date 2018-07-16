@@ -20,7 +20,7 @@ public class ProductListServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    List<Product> allProducts = productDao.getProductByCategoryId(1);
+    List<Product> allProducts = productDao.getProductByCategoryId(2);
     request.setAttribute("products", allProducts);
 
     RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");

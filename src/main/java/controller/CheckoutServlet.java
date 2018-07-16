@@ -24,12 +24,11 @@ public class CheckoutServlet extends HttpServlet {
 
   private ShoppingCartDao shoppingCartDao;
   private ObjectMapper mapper = new ObjectMapper();
-  private UserDao uDao;
+  private UserDao db;
 
   @Override
   protected void service(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
-    super.service(req, resp);
     HttpSession session = req.getSession(true);
     if (session != null && session.getAttribute("shoppingCartDao") != null) {
       shoppingCartDao = (ShoppingCartDao) session.getAttribute("shoppingCartDao");
@@ -37,17 +36,16 @@ public class CheckoutServlet extends HttpServlet {
       shoppingCartDao = new ShoppingCartDao();
       session.setAttribute("shoppingCartDao", shoppingCartDao);
     }
-  }
 
-  @Override
-  public void init() throws ServletException {
-    super.init();
-    uDao = new UserDao();
+    db = (UserDao)getServletContext().getAttribute("db");
+    super.service(req, resp);
   }
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
+    User user = db.getUser((String) req.getSession().getAttribute("email"));
+    req.setAttribute("user", user);
     req.getRequestDispatcher("/WEB-INF/jsp/checkout.jsp").forward(req, resp);
   }
 
@@ -59,7 +57,7 @@ public class CheckoutServlet extends HttpServlet {
       Order order = mapper.readValue(request.getParameter("order"), Order.class);
       HttpSession session = request.getSession();
       String email = (String)session.getAttribute("email");
-      User user = uDao.getUserByEmail(email);
+      User user = db.getUserByEmail(email);
       order.setUserId(user.getId());
       List<OrderItem> items = new ArrayList<>();
       // build the item list

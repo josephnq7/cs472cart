@@ -36,12 +36,12 @@
                         <a class="nav-link" href="login">Login</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="register">Register</a>
                     </li>
                 </c:if>
                 <c:if test="${email != null}">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="profile">Profile</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="logout">Logout</a>
@@ -64,11 +64,11 @@
                 <a href="/cart" class="list-group-item d-flex justify-content-between align-items-center">
                     Home
                 </a>
-                <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                    Category1
+                <a href="/cart/cat?id=1" class="list-group-item d-flex justify-content-between align-items-center">
+                    Front-End
                 </a>
-                <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                    Category2
+                <a href="/cart/cat?id=2" class="list-group-item d-flex justify-content-between align-items-center">
+                    Back-End
                 </a>
                 <a href="shopping-cart" class="list-group-item d-flex justify-content-between align-items-center">
                     View Cart
