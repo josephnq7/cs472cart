@@ -23,13 +23,9 @@ public class ProfileServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Cookie[] cookies = request.getCookies();
-        String email = "";
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals("cart-email")){
-                email = cookies[i].getValue();
-            }
-        }
+
+        String email = (String)request.getSession().getAttribute("email");
+
         UserDao db = (UserDao)getServletContext().getAttribute("db");
         User user = db.getUser(email);
         if (user != null) {

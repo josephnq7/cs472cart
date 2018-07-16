@@ -6,7 +6,8 @@ import java.util.*;
 public class UserDao {
   private Map<String, User> usersDB = new HashMap<>();
   {
-    usersDB.put("hiep@mum.edu", new User(1,"hiep@mum.edu","abc", "Quang Hiep Nguyen", "6179061743", "1000 N"));
+    usersDB.put("hiep@mum.edu", new User(1,"hiep@mum.edu","123456789", "Quang Hiep Nguyen", "6179061743", "1000 N 4th"));
+    usersDB.put("nghia@mum.edu", new User(2,"nghia@mum.edu","123456789", "Nghia Nguyen", "6789993645", "2000 N 4th"));
   }
 
   public boolean checkExistUser(String email, String password){

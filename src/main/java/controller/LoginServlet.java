@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
       }
     }
     if(!email.isEmpty() && !password.isEmpty()){
-      req.setAttribute("email", email);
+      req.setAttribute("emailCk", email);
       req.setAttribute("password", password);
       req.setAttribute("remember", "checked");
     }

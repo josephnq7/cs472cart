@@ -17,7 +17,7 @@
             <c:forEach items="${myCart}" var="item">
                 <tr class="item" id="item_${item.product.id}">
                     <td><input class="check" type="checkbox" value="${item.product.id}" id="optionsCheckbox"></td>
-                    <td class="muted center_text"><a href="product.html"><img src="<c:url value="resources/images/${item.product.image}" />" class="product-image"></a></td>
+                    <td class="muted center_text"><a href="product?id=${item.product.id}"><img src="<c:url value="resources/images/${item.product.image}" />" class="product-image"></a></td>
                     <td>${item.product.name}</td>
                     <td><input class="qty" type="number" placeholder="1" class="input-mini" value="${item.qty}" productid="${item.product.id}"></td>
                     <td class="price format-money">${item.price}</td>
