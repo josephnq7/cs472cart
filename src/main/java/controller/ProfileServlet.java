@@ -15,9 +15,7 @@ import java.io.IOException;
 
 @WebServlet("/profile")
 public class ProfileServlet extends HttpServlet {
-//    UserDao db =
 
-    private ObjectMapper mapper = new ObjectMapper();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

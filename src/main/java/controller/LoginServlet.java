@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
     String email = req.getParameter("email");
     String pw = req.getParameter("password");
 
-    UserDao uDao = new UserDao();
+    UserDao uDao = (UserDao)getServletContext().getAttribute("db");
 
     if(uDao.checkExistUser(email, pw)){
       if((req.getParameter("remember") != null) && req.getParameter("remember").equals("1")){
